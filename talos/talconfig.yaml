@@ -27,7 +27,7 @@ nodes:
   - hostname: "ivn-k8s-01"
     ipAddress: "10.1.135.31"
     installDiskSelector:
-      serial: "S78GNL0XB03167R"
+      serial: "S78GNL0X982000V"
     machineSpec:
       secureboot: true
     talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
