@@ -15,6 +15,7 @@ vars:
 
 env:
   KUBECONFIG: '{{.ROOT_DIR}}/kubeconfig'
+  MINIJINJA_CONFIG_FILE: '{{.ROOT_DIR}}/.minijinja.toml'
   SOPS_AGE_KEY_FILE: '{{.ROOT_DIR}}/age.key'
   TALOSCONFIG: '{{.TALOSCONFIG}}'
 

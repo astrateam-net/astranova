@@ -1,0 +1,24 @@
+{% for namespace in ["external-secrets", "flux-system"] %}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ namespace }}
+{% endfor %}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: onepassword-secret
+  namespace: external-secrets
+stringData:
+  1password-credentials.json: op://kubernetes/1password/OP_CREDENTIALS_JSON
+  token: op://kubernetes/1password/OP_CONNECT_TOKEN
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sops-age
+  namespace: flux-system
+stringData:
+  age.agekey: op://kubernetes/sops/SOPS_PRIVATE_KEY

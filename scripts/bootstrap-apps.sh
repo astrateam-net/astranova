@@ -113,6 +113,29 @@ function apply_sops_secrets() {
     done
 }
 
+# Resources to be applied before the helmfile charts are installed
+function apply_resources() {
+    log debug "Applying resources"
+
+    local -r resources_file="${ROOT_DIR}/bootstrap/resources.yaml.j2"
+
+    if ! output=$(render_template "${resources_file}") || [[ -z "${output}" ]]; then
+        exit 1
+    fi
+
+    if echo "${output}" | kubectl diff --filename - &>/dev/null; then
+        log info "Resources are up-to-date"
+        return
+    fi
+
+    if echo "${output}" | kubectl apply --server-side --filename - &>/dev/null; then
+        log info "Resources applied"
+    else
+        log error "Failed to apply resources"
+    fi
+}
+
+
 # Apply Helm releases using helmfile
 function apply_helm_releases() {
     log debug "Applying Helm releases with helmfile"
@@ -131,7 +154,11 @@ function apply_helm_releases() {
 }
 
 function main() {
-    check_cli helmfile kubectl kustomize sops talhelper yq
+    check_cli helmfile jq kubectl kustomize minijinja-cli sops op talhelper yq
+
+    if ! op user get --me &>/dev/null; then
+        log error "Failed to authenticate with 1Password CLI"
+    fi
 
     # Apply resources and Helm releases
     wait_for_nodes
