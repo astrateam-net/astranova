@@ -29,8 +29,8 @@ nodes:
     installDiskSelector:
       serial: "S78GNL0X982000V"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -44,28 +44,13 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-02"
     ipAddress: "10.1.135.32"
     installDiskSelector:
       serial: "S78GNL0X534609D"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -79,28 +64,13 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-03"
     ipAddress: "10.1.135.33"
     installDiskSelector:
       serial: "S78GNL0X534599X"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -114,28 +84,13 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-04"
     ipAddress: "10.1.135.41"
     installDiskSelector:
       serial: "S78GNL0X981951V"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -147,28 +102,13 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-05"
     ipAddress: "10.1.135.42"
     installDiskSelector:
       serial: "S78GNL0X500319H"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -180,28 +120,13 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-06"
     ipAddress: "10.1.135.43"
     installDiskSelector:
       serial: "S78GNL0X981946A"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -213,21 +138,6 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
 
 # Global patches
 patches:
