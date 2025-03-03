@@ -30,7 +30,7 @@ nodes:
       serial: "S78GNL0X982000V"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -50,7 +50,7 @@ nodes:
       serial: "S78GNL0X534609D"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -70,7 +70,7 @@ nodes:
       serial: "S78GNL0X534599X"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -90,7 +90,7 @@ nodes:
       serial: "S78GNL0X981951V"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -108,7 +108,7 @@ nodes:
       serial: "S78GNL0X500319H"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -126,7 +126,7 @@ nodes:
       serial: "S78GNL0X981946A"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/c10220c6e8322131dfb2be9efaa880da6bcd312c2abcd890bbc75d184f76bbb6
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
