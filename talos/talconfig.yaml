@@ -29,8 +29,8 @@ nodes:
     installDiskSelector:
       serial: "S78GNL0X982000V"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -48,30 +48,15 @@ nodes:
           hardwareAddr: "bc:24:11:db:14:82"
         dhcp: false
         addresses:
-          - "10.1.135.31/24"
+          - "10.1.115.31/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-mng02"
     ipAddress: "10.1.135.32"
     installDiskSelector:
       serial: "S78GNL0X534609D"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -89,30 +74,15 @@ nodes:
           hardwareAddr: "bc:24:11:64:86:de"
         dhcp: false
         addresses:
-          - "10.1.135.32/24"
+          - "10.1.115.32/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-mng03"
     ipAddress: "10.1.135.33"
     installDiskSelector:
       serial: "S78GNL0X534599X"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -130,30 +100,15 @@ nodes:
           hardwareAddr: "bc:24:11:0e:41:91"
         dhcp: false
         addresses:
-          - "10.1.135.33/24"
+          - "10.1.115.33/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-wrk01"
     ipAddress: "10.1.135.41"
     installDiskSelector:
       serial: "S78GNL0X981951V"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -169,30 +124,15 @@ nodes:
           hardwareAddr: "bc:24:11:e1:19:d3"
         dhcp: false
         addresses:
-          - "10.1.135.41/24"
+          - "10.1.115.41/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-wrk02"
     ipAddress: "10.1.135.42"
     installDiskSelector:
       serial: "S78GNL0X500319H"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -208,30 +148,15 @@ nodes:
           hardwareAddr: "bc:24:11:42:e9:7c"
         dhcp: false
         addresses:
-          - "10.1.135.42/24"
+          - "10.1.115.42/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
   - hostname: "ivn-k8s-wrk03"
     ipAddress: "10.1.135.43"
     installDiskSelector:
       serial: "S78GNL0X981946A"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/c2baa8b20c90c3547024a59bb3fd8804749d27209bd7d516a01740fa538c4d49
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -247,24 +172,8 @@ nodes:
           hardwareAddr: "bc:24:11:66:25:c0"
         dhcp: false
         addresses:
-          - "10.1.135.43/24"
+          - "10.1.115.43/24"
         mtu: 9000
-    patches:
-      - # Encrypt system disk with TPM
-        |-
-        machine:
-          systemDiskEncryption:
-            state:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-            ephemeral:
-              provider: luks2
-              keys:
-                - slot: 0
-                  tpm: {}
-
 # Global patches
 patches:
   - "@./patches/global/machine-files.yaml"
