@@ -55,5 +55,8 @@
     "yaml.schemas": {
       "kubernetes": "./kubernetes/**/*.yaml"
     },
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv"
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "frontMatter.framework.id": "jekyll",
+    "frontMatter.content.publicFolder": "assets",
+    "frontMatter.preview.host": "http://localhost:4000"
 }

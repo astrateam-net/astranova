@@ -164,6 +164,7 @@ function main() {
     wait_for_nodes
     apply_namespaces
     apply_configmaps
+    apply_resources
     apply_sops_secrets
     apply_helm_releases
 
