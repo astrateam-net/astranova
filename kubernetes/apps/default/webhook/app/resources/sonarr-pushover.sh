@@ -4,6 +4,8 @@ set -Eeuo pipefail
 PUSHOVER_URI=${1:?}
 PAYLOAD=${2:?}
 
+echo "[DEBUG] Payload: ${PAYLOAD}"
+
 function _jq() {
     jq --raw-output "${1:?}" <<< "${PAYLOAD}"
 }
@@ -52,7 +54,7 @@ function notify() {
     fi
 
     apprise -vv -t "${pushover_title}" -b "${pushover_msg}" \
-        "${PUSHOVER_URI}?url=${pushover_url}&url_title=${pushover_url_title}&priority=${pushover_priority}&format=html"
+        "${PUSHOVER_URI}?url=${pushover_url}&url_title=${pushover_url_title}&priority=${pushover_priority}&notify_format=html"
 }
 
 function main() {

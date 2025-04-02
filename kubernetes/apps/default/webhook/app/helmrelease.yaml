@@ -19,6 +19,8 @@ spec:
   values:
     controllers:
       webhook:
+        replicas: 2
+        strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
         containers:
@@ -84,15 +86,4 @@ spec:
         name: webhook-configmap
         defaultMode: 0775
         globalMounts:
-          - path: /config/hooks.yaml
-            subPath: hooks.yaml
-            readOnly: true
-          - path: /config/jellyseerr-pushover.sh
-            subPath: jellyseerr-pushover.sh
-            readOnly: true
-          - path: /config/radarr-pushover.sh
-            subPath: radarr-pushover.sh
-            readOnly: true
-          - path: /config/sonarr-pushover.sh
-            subPath: sonarr-pushover.sh
-            readOnly: true
+          - readOnly: true
