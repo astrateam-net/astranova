@@ -21,8 +21,8 @@ function notify() {
         printf -v pushover_priority "%s" "low"
     fi
 
-    apprise -vv --title "${pushover_title}" --body "${pushover_msg}" --input-format html \
-        "${PUSHOVER_URI}?url=${pushover_url}&url_title=${pushover_url_title}&priority=${pushover_priority}"
+    apprise -vv --title "${pushover_title}" --body "${pushover_msg}" \
+        "${PUSHOVER_URI}?url=${pushover_url}&url_title=${pushover_url_title}&priority=${pushover_priority}&format=html"
 
 }
 
