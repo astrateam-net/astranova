@@ -1,20 +1,24 @@
 ---
-- id: radarr-notify-webhook
-  execute-command: /config/pushover-notifier.sh
+- id: jellyseerr-pushover
+  execute-command: /config/jellyseerr-pushover.sh
   command-working-directory: /config
   pass-arguments-to-command:
     - source: string
-      name: radarr
-    - source: string
-      name: '{{ getenv "PUSHOVER_RADARR_URI" }}'
+      name: '{{ getenv "JELLYSEERR_PUSHOVER_URI" }}'
     - source: entire-payload
 
-- id: sonarr-notify-webhook
-  execute-command: /config/pushover-notifier.sh
+- id: radarr-pushover
+  execute-command: /config/radarr-pushover.sh
   command-working-directory: /config
   pass-arguments-to-command:
     - source: string
-      name: sonarr
+      name: '{{ getenv "RADARR_PUSHOVER_URI" }}'
+    - source: entire-payload
+
+- id: sonarr-pushover
+  execute-command: /config/sonarr-pushover.sh
+  command-working-directory: /config
+  pass-arguments-to-command:
     - source: string
-      name: '{{ getenv "PUSHOVER_SONARR_URI" }}'
+      name: '{{ getenv "SONARR_PUSHOVER_URI" }}'
     - source: entire-payload
