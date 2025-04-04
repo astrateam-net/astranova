@@ -45,7 +45,8 @@ spec:
               repository: ghcr.io/twin/gatus
               tag: v5.17.0@sha256:a8c53f9e9f1a3876cd00e44a42c80fc984e118d5ba0bdbaf08980cb627d61512
             env:
-              TZ: America/New_York
+              TZ: Europe/Moscow
+              SECRET_DOMAIN: ${SECRET_DOMAIN}
               GATUS_CONFIG_PATH: /config
               GATUS_DELAY_START_SECONDS: 5
               WEB_PORT: &port 80
@@ -92,8 +93,8 @@ spec:
     route:
       app:
         hostnames:
-          - "{{ .Release.Name }}.devbu.io"
-          - status.devbu.io
+          - "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - status.${SECRET_DOMAIN}
         parentRefs:
           - name: external
             namespace: kube-system

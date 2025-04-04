@@ -5,14 +5,14 @@ kind: Gateway
 metadata:
   name: external
   annotations:
-    external-dns.alpha.kubernetes.io/target: &hostname external.devbu.io
+    external-dns.alpha.kubernetes.io/target: &hostname "external.${SECRET_DOMAIN}"
 spec:
   gatewayClassName: cilium
   addresses:
     - type: IPAddress
-      value: 192.168.42.126
+      value: 10.1.130.111
     - type: IPAddress
-      value: ::ffff:192.168.42.126
+      value: ::ffff:10.1.130.111
   infrastructure:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: *hostname
@@ -20,18 +20,18 @@ spec:
     - name: http
       protocol: HTTP
       port: 80
-      hostname: "*.devbu.io"
+      hostname: "*.${SECRET_DOMAIN}"
       allowedRoutes:
         namespaces:
           from: Same
     - name: https
       protocol: HTTPS
       port: 443
-      hostname: "*.devbu.io"
+      hostname: "*.${SECRET_DOMAIN}"
       allowedRoutes:
         namespaces:
           from: All
       tls:
         certificateRefs:
           - kind: Secret
-            name: devbu-io-tls
+            name: "${SECRET_DOMAIN/./-}-tls"

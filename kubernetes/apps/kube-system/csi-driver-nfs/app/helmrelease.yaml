@@ -11,12 +11,12 @@ spec:
     operation: copy
   ref:
     tag: 4.11.0
-  url: oci://ghcr.io/home-operations/charts-mirror/csi-driver-nfs
+  url: oci://ghcr.io/astrateam-net/oci-charts/csi-driver-nfs
   verify:
     provider: cosign
     matchOIDCIdentity:
       - issuer: "^https://token.actions.githubusercontent.com$"
-        subject: "^https://github.com/home-operations/charts-mirror.*$"
+        subject: "^https://github.com/astrateam-net/oci-charts.*$"
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
@@ -42,8 +42,8 @@ spec:
       create: true
       name: nfs-slow
       parameters:
-        server: expanse.internal
-        share: /mnt/eros/Kubernetes
+        server: ivn-nas1.${SECRET_DOMAIN}
+        share: /volume1/kubernetes
       mountOptions:
         - nfsvers=4.2
         - nconnect=16

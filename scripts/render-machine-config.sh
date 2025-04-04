@@ -9,7 +9,7 @@ set -Eeuo pipefail
 # 2. Path to the patch file for the machine configuration.
 #
 # Example Usage:
-#   ./render-machine-config.sh controlplane.yaml.j2 nodes/192.168.42.10.yaml.j2
+#   ./render-machine-config.sh controlplane.yaml.j2 nodes/10.1.130.11.yaml.j2
 #
 # Output:
 # The merged Talos configuration is printed to standard output.

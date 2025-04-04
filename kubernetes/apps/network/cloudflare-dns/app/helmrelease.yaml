@@ -11,12 +11,12 @@ spec:
     operation: copy
   ref:
     tag: 1.16.0
-  url: oci://ghcr.io/home-operations/charts-mirror/external-dns
+  url: oci://ghcr.io/astrateam-net/oci-charts/external-dns
   verify:
     provider: cosign
     matchOIDCIdentity:
       - issuer: "^https://token.actions.githubusercontent.com$"
-        subject: "^https://github.com/home-operations/charts-mirror.*$"
+        subject: "^https://github.com/astrateam-net/oci-charts.*$"
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
@@ -64,7 +64,7 @@ spec:
     sources: ["crd", "gateway-httproute"]
     txtOwnerId: default
     txtPrefix: k8s.
-    domainFilters: ["devbu.io"]
+    domainFilters: ["${SECRET_DOMAIN}"]
     serviceMonitor:
       enabled: true
     podAnnotations:

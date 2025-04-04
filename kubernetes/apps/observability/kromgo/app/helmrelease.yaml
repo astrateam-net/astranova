@@ -29,6 +29,7 @@ spec:
               repository: ghcr.io/kashalls/kromgo
               tag: v0.5.1@sha256:1f86c6151c676fa6d368230f1b228d67ed030fd4409ae0a53763c60d522ea425
             env:
+              SECRET_DOMAIN: ${SECRET_DOMAIN}
               PROMETHEUS_URL: http://prometheus-operated.observability.svc.cluster.local:9090
               SERVER_PORT: &port 80
               HEALTH_PORT: &healthPort 8080
@@ -70,7 +71,7 @@ spec:
             port: *healthPort
     route:
       app:
-        hostnames: ["{{ .Release.Name }}.devbu.io"]
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: external
             namespace: kube-system
