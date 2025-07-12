@@ -27,7 +27,7 @@ spec:
           app:
             image:
               repository: docker.io/cloudflare/cloudflared
-              tag: 2025.4.0@sha256:522827fe6220249d72ade9a85cf5bdcc52c18ef1d13c7a3bb7480f56a0fd36e6
+              tag: 2025.7.0@sha256:803b17adb5326a38ce397b9c9f374289ad290ee5526d204b5879a1423b6f5c3e
             env:
               NO_AUTOUPDATE: true
               TUNNEL_METRICS: 0.0.0.0:8080
