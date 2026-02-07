@@ -23,7 +23,7 @@ _.python.venv = { path = "{{config_root}}/.venv", create = true }
 "aqua:budimanjojo/talhelper" = "3.0.21"
 "aqua:cilium/cilium-cli" = "0.18.2"
 "aqua:cli/cli" = "2.69.0"
-"aqua:cloudflare/cloudflared" = "2025.2.1"
+"aqua:cloudflare/cloudflared" = "2026.2.0"
 "aqua:cue-lang/cue" = "0.12.0"
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:fluxcd/flux2" = "2.5.1"
