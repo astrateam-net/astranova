@@ -35,5 +35,5 @@ _.python.venv = { path = "{{config_root}}/.venv", create = true }
 "aqua:kubernetes-sigs/kustomize" = "5.6.0"
 "aqua:kubernetes/kubectl" = "1.32.3"
 "aqua:mikefarah/yq" = "4.45.1"
-"aqua:siderolabs/talos" = "1.9.5"
+"aqua:siderolabs/talos" = "1.12.4"
 "aqua:yannh/kubeconform" = "0.6.7"
